@@ -1,0 +1,10 @@
+org/fifthgen/ws/hello/package-info.class
+org/fifthgen/ws/hello/model/UserDetails.class
+org/fifthgen/ws/hello/model/Message.class
+org/fifthgen/ws/hello/Hello.class
+org/fifthgen/ws/hello/model/Address.class
+org/fifthgen/ws/hello/model/Messages.class
+org/fifthgen/ws/hello/HelloService.class
+org/fifthgen/ws/hello/ObjectFactory.class
+org/fifthgen/ws/hello/client/HelloServiceClient.class
+org/fifthgen/ws/hello/security/PasswordValidator.class
