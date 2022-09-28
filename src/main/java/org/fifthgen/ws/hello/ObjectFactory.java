@@ -1,10 +1,10 @@
 package org.fifthgen.ws.hello;
 
-import jakarta.xml.bind.JAXBElement;
-import jakarta.xml.bind.annotation.XmlElementDecl;
-import jakarta.xml.bind.annotation.XmlRegistry;
 import org.fifthgen.ws.hello.model.*;
 
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.XmlElementDecl;
+import javax.xml.bind.annotation.XmlRegistry;
 import javax.xml.namespace.QName;
 
 @XmlRegistry
@@ -36,7 +36,6 @@ public class ObjectFactory {
     public JAXBElement<Address> createAddress(Address value) {
         return new JAXBElement<>(ADDRESS, Address.class, null, value);
     }
-
 
     @XmlElementDecl(namespace = "http://soap.fifthgen.org/", name = "userDetails")
     public JAXBElement<UserDetails> createUserDetails(UserDetails value) {

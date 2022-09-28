@@ -1,20 +1,23 @@
 package org.fifthgen.ws.hello.security;
 
-import com.sun.xml.wss.impl.callback.PasswordValidationCallback;
 
-import static com.sun.xml.wss.impl.callback.PasswordValidationCallback.PlainTextPasswordRequest;
-import static com.sun.xml.wss.impl.callback.PasswordValidationCallback.Request;
+import javax.xml.ws.WebServiceContext;
 
-public class PasswordValidator implements PasswordValidationCallback.PasswordValidator {
+public class PasswordValidator {
 
     private static final String USER = "admin";
     private static final String PASS = "admin";
 
-    @Override
-    public boolean validate(Request request) {
-        PlainTextPasswordRequest plainTextPasswordRequest = (PlainTextPasswordRequest) request;
+    public boolean validate(WebServiceContext ctx) throws InvalidSecurityHeaderException {
+        String username = (String) ctx.getMessageContext().get("USERNAME");
 
-        return plainTextPasswordRequest.getUsername().equals(USER)
-                && plainTextPasswordRequest.getPassword().equals(PASS);
+        if (username == null) {
+            throw new InvalidSecurityHeaderException("Security header is missing or invalid");
+        }
+
+        String password = (String) ctx.getMessageContext().get("PASSWORD");
+
+        return username.equals(USER)
+                && password.equals(PASS);
     }
 }

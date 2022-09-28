@@ -1,7 +1,6 @@
 package org.fifthgen.ws.hello.model;
 
-import jakarta.xml.bind.annotation.*;
-
+import javax.xml.bind.annotation.*;
 import javax.xml.datatype.XMLGregorianCalendar;
 import java.util.ArrayList;
 import java.util.List;

@@ -1,9 +1,9 @@
 package org.fifthgen.ws.hello.model;
 
-import jakarta.xml.bind.annotation.*;
-
-import javax.xml.datatype.XMLGregorianCalendar;
+import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -14,7 +14,7 @@ public class Messages {
     protected List<Message> message;
     @XmlAttribute(name = "date")
     @XmlSchemaType(name = "dateTime")
-    protected XMLGregorianCalendar date;
+    protected Calendar date;
 
     public List<Message> getMessage() {
         if (message == null) {
@@ -24,11 +24,11 @@ public class Messages {
         return this.message;
     }
 
-    public XMLGregorianCalendar getDate() {
+    public Calendar getDate() {
         return date;
     }
 
-    public void setDate(XMLGregorianCalendar value) {
+    public void setDate(Calendar value) {
         this.date = value;
     }
 }
